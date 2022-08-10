@@ -1,0 +1,19 @@
+#!/bin/bash
+
+music_dir="$HOME/Music/"
+temp_song="/tmp/current-song"
+
+# having issues escaping spaces in the path
+cp "$music_dir/$(mpc --format %file% current)" "$temp_song"
+
+ffmpeg \
+  -hide_banner \
+  -loglevel 0 \
+  -y \
+  -i "$temp_song" \
+  -vf scale=300:-1 \
+  "/tmp/cover.png" > /dev/null 2>&1
+
+rm "$temp_song"
+
+source "$HOME/.local/bin/set-current-cover"
