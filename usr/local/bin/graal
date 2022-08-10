@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/.wine/drive_c/users/kojiro/Graal/
+wine Graal.exe

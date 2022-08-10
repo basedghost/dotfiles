@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Executes a script to view the webcam. (Automatically opens as a floating window in AwesomeWM config)
+ffplay -f video4linux2 -window_title Webcam -alwaysontop -framerate 60 -video_size hd720 /dev/video0
