@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- abGate -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Noise Gate</Name>
+   <URI>http://hippie.lt/lv2/gate</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <Volume>0.8443627</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Switch</Name>
+    <Symbol>switch</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Threshold</Name>
+    <Symbol>threshold</Symbol>
+    <Value>-14.0441179275513</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Attack</Name>
+    <Symbol>attack</Symbol>
+    <Value>277</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Hold</Name>
+    <Symbol>hold</Symbol>
+    <Value>21.4166660308838</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Decay</Name>
+    <Symbol>decay</Symbol>
+    <Value>341</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Range</Name>
+    <Symbol>gaterange</Symbol>
+    <Value>-66.8676452636719</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>Music Player Daemon/mpd.Pipewire Multimedia Service:output_FL</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Music Player Daemon/mpd.Pipewire Multimedia Service:output_FR</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FL-11836</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FR-11837</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FL</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FR</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FL-16645</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FR-16646</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FL-15947</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FR-15948</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FL-13524</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LibreWolf:output_FR-13525</Source>
+   <Target>AudioBox USB Analog Stereo:playback_FR</Target>
+  </Connection>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
