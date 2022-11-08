@@ -1,0 +1,94 @@
+<!DOCTYPE patchbay>
+<patchbay name="qp" version="0.3.6">
+ <items>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="LibreWolf" port="LibreWolf:output_FR"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="mpv" port="mpv:output_FR"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Persona 5 Royal" port="Persona 5 Royal:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="AudioBox USB Analog Stereo" port="AudioBox USB:capture_FL"/>
+   <input node="Noise Gate" port="Noise Gate:Input"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="wine-preloader/PipeWire ALSA [wine-preloader]" port="PipeWire ALSA [wine-preloader]:output_FL"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="wine-preloader/PipeWire ALSA [wine-preloader]" port="FL:out_15"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Noise Gate" port="Noise Gate:Output"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="fcadefbneo.exe" port="fcadefbneo.exe:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Music Player Daemon/mpd.Pipewire Multimedia Service" port="mpd.Pipewire Multimedia Service:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="AudioBox USB Analog Stereo" port="AudioBox USB:capture_FR"/>
+   <input node="Noise Gate" port="Noise Gate:Input"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="LibreWolf" port="LibreWolf:output_FR"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Music Player Daemon/mpd.Pipewire Multimedia Service" port="mpd.Pipewire Multimedia Service:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Noise Gate" port="Noise Gate:Output"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="wine-preloader/PipeWire ALSA [wine-preloader]" port="PipeWire ALSA [wine-preloader]:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="mpv" port="mpv:output_FL"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Persona 5 Royal" port="Persona 5 Royal:output_FL"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="P5R.exe" port="Persona 5 Royal:output_FL"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="wine-preloader/PipeWire ALSA [wine-preloader]" port="FL:out_16"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="Persona 5 Royal" port="Persona 5 Royal:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="P5R.exe" port="Persona 5 Royal:output_FR"/>
+   <input node="Brave input" port="Brave input:input_FR"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="fcadefbneo.exe" port="fcadefbneo.exe:output_FL"/>
+   <input node="Brave input" port="Brave input:input_FL"/>
+  </item>
+  <item port-type="pipewire-audio" node-type="pipewire">
+   <output node="LibreWolf" port="LibreWolf:output_FL"/>
+   <input node="WEBRTC VoiceEngine" port="WEBRTC VoiceEngine:input_FL"/>
+  </item>
+ </items>
+</patchbay>
+
