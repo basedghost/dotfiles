@@ -312,7 +312,7 @@ function theme.at_screen_connect(s)
             netupicon,
             netupinfo.widget,
             --volicon,
-            theme.volume.widget,
+            --theme.volume.widget,
             memicon,
             memory.widget,
             --spacer,
