@@ -556,24 +556,10 @@ globalkeys = mytable.join(
     --]]
     -- dmenu
     awful.key({ modkey }, "d", function () awful.spawn.with_shell("dmenu_run -fn 'DejaVu Sans-15'") end,
-              {description = "dmenu", group = "launcher"}),
+              {description = "dmenu", group = "launcher"})
+)
 
---   awful.key({ modkey }, "p",
---              function ()
---                  awful.prompt.run {
---                    prompt       = "Run Lua code: ",
---                    textbox      = awful.screen.focused().mypromptbox.widget,
---                    exe_callback = awful.util.eval,
---                    history_path = awful.util.get_cache_dir() .. "/history_eval"
---                  }
---              end,
---              {description = "lua execute prompt", group = "awesome"})
-    --]]
-
---clientkeys = mytable.join(
---    awful.key({ altkey, "Shift"   }, "m",      lain.util.magnify_client,
---              {description = "magnify client", group = "client"}),
-
+	      clientkeys = mytable.join(
     -- Fullscreen focused client
     awful.key({ modkey,           }, "f",
         function (c)
@@ -638,6 +624,21 @@ globalkeys = mytable.join(
         {description = "(un)maximize horizontally", group = "client"})
 )
 
+--   awful.key({ modkey }, "p",
+--              function ()
+--                  awful.prompt.run {
+--                    prompt       = "Run Lua code: ",
+--                    textbox      = awful.screen.focused().mypromptbox.widget,
+--                    exe_callback = awful.util.eval,
+--                    history_path = awful.util.get_cache_dir() .. "/history_eval"
+--                  }
+--              {description = "lua execute prompt", group = "awesome"})
+--]]
+--
+--clientkeys = mytable.join(
+--    awful.key({ altkey, "Shift"   }, "m",      lain.util.magnify_client,
+--              {description = "magnify client", group = "client"}),
+--
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
