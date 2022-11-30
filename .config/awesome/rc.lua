@@ -69,7 +69,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "unclutter -root", "screentearfix.sh", "nitrogen --restore", "layout.sh", "mpv --no-video ~/.local/share/startupsound/CapcomLogo.flac", "xscreensaver -nosplash", "timedatectl set-timezone America/Moncton"}) -- comma-separated entries
+run_once({ "unclutter -root", "screentearfix.sh", "nitrogen --restore", "layout.sh", "mpv --no-video ~/.local/share/startupsound/CapcomLogo.flac", "xscreensaver -nosplash"}) -- comma-separated entries
 
 -- This function implements the XDG autostart specification
 --[[
@@ -181,7 +181,7 @@ beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv
 -- Create a launcher widget and a main menu
 local myawesomemenu = {
    { "keybindings", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "reboot", awesome.restart },
+   { "reload config", awesome.restart },
    { "logout", function() awesome.quit() end },
 }
 
@@ -292,7 +292,9 @@ globalkeys = mytable.join(
     -- Restore nitrogen wallpaper
     awful.key({ modkey,           }, "w", function () awful.spawn.with_shell("nrestore.sh") end,
     {description = "restore wallpaper", group = "hotkeys"}),
-
+    -- Open nitrogen (GUI to select wallpaper)
+    awful.key({ modkey, "Shift" }, "w", function () awful.spawn.with_shell("nitrogen") end,
+    {description = "nitrogen (wallpapers)"})
     -- Open file manager
     awful.key({ altkey,           }, "f", function () awful.spawn.with_shell("pcmanfm") end,
     {description = "file manager", group = "launcher"}),
@@ -447,13 +449,13 @@ globalkeys = mytable.join(
 --    awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
 --              {description = "show weather", group = "widgets"}),
 
-    -- Current Window Transparency*
+    -- Current Window Transparency *picom
     awful.key({ altkey, "Shift" }, "Up", function () os.execute("picom-trans -c +5") end,
               {description = "window opacity +5%", group = "client"}),
     awful.key({ altkey, "Shift" }, "Down", function () os.execute("picom-trans -c -5") end,
               {description = "window opacity -5%", group = "client"}),
 
-    -- MPD volume control
+    -- MPD control (volume)
     awful.key({ altkey }, "Up",
         function ()
             os.execute(string.format("mpc volume +2", beautiful.volume.channel))
@@ -466,24 +468,6 @@ globalkeys = mytable.join(
             beautiful.volume.update()
         end,
         {description = "music volume down", group = "mpd"}),
---    awful.key({ altkey }, "m",
---        function ()
---            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
---            beautiful.volume.update()
---        end,
---        {description = "toggle mute", group = "hotkeys"}),
---    awful.key({ altkey, "Control" }, "m",
---        function ()
---            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
---            beautiful.volume.update()
---        end,
---        {description = "volume 100%", group = "hotkeys"}),
---    awful.key({ altkey, "Control" }, "0",
---        function ()
---            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
---            beautiful.volume.update()
---        end,
---        {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",
@@ -528,31 +512,16 @@ globalkeys = mytable.join(
             beautiful.mpd.update()
         end,
         {description = "change song", group = "mpd"}),
-	
-   -- awful.key({ altkey }, "0",
-   --     function ()
-   --         local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-   --         if beautiful.mpd.timer.started then
-   --             beautiful.mpd.timer:stop()
-   --             common.text = common.text .. lain.util.markup.bold("OFF")
-   --         else
-   --             beautiful.mpd.timer:start()
-   --             common.text = common.text .. lain.util.markup.bold("ON")
-   --         end
-   --         naughty.notify(common)
-   --     end,
-   --     {description = "mpc on/off", group = "widgets"}),
 
-    -- Copy primary to clipboard (terminals to gtk)
---    awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
---              {description = "copy terminal to gtk", group = "hotkeys"}),
-    -- Copy clipboard to primary (gtk to terminals)
---    awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
---              {description = "copy gtk to terminal", group = "hotkeys"}),
-
-    -- Browser
+    -- Primary Browser
     awful.key({ modkey }, "b", function () awful.spawn(browser) end,
-              {description = "web browser", group = "launcher"}),
+              {description = "librewolf browser", group = "launcher"}),
+    -- Secondary Browser
+    awful.key({ modkey, "Shift" }, "b", function () awful.spawn.with_shell("brave &") end,
+              {description = "brave browser", group = "launcher"}),
+    -- Emacs
+    awful.key({ modkey }, "e", function () awful.spawn.with_shell("emacs &") end,
+              {description = "emacs", group = "launcher"}),
     --]]
     -- dmenu
     awful.key({ modkey }, "d", function () awful.spawn.with_shell("dmenu_run -fn 'DejaVu Sans-15'") end,
@@ -750,12 +719,12 @@ awful.rules.rules = {
         }
       }, properties = { floating = true, sticky = true, ontop = true }},
 
-    -- Add titlebars to normal clients and dialogs
+    -- Set titlebars_enabled to true to add titlebars to clients
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
+    -- Example: Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
 }
