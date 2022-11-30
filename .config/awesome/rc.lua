@@ -294,7 +294,7 @@ globalkeys = mytable.join(
     {description = "restore wallpaper", group = "hotkeys"}),
     -- Open nitrogen (GUI to select wallpaper)
     awful.key({ modkey, "Shift" }, "w", function () awful.spawn.with_shell("nitrogen") end,
-    {description = "nitrogen (wallpapers)"})
+    {description = "nitrogen (wallpapers)"}),
     -- Open file manager
     awful.key({ altkey,           }, "f", function () awful.spawn.with_shell("pcmanfm") end,
     {description = "file manager", group = "launcher"}),
