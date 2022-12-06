@@ -69,7 +69,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "unclutter -root", "screentearfix.sh", "nitrogen --restore", "layout.sh", "mpv --no-video ~/.local/share/startupsound/CapcomLogo.flac", "xscreensaver -nosplash"}) -- comma-separated entries
+run_once({ "unclutter -root", "picom", "screentearfix.sh", "nitrogen --restore", "layout.sh", "mpv --no-video ~/.local/share/startupsound/CapcomLogo.flac", "xscreensaver -nosplash"}) -- comma-separated entries
 
 -- This function implements the XDG autostart specification
 --[[
